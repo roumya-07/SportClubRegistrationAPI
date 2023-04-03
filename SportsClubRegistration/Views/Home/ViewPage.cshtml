@@ -1,0 +1,81 @@
+﻿<div class="row" style="width:100%">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-6">
+            </div>
+            <div class="col-sm-6 text-right">
+                <a class="btn btn-warning" href="/Home/Index">Add</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="form-group col-md-12">
+        <center>
+            <h2><u>Registration Details</u></h2>
+        </center>
+    </div>
+
+    <table class="table" id="View">
+        <thead>
+            <tr>
+                <th>
+                    Sl.No
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Mobile No
+                </th>
+                <th>
+                    Age
+                </th>
+                <th>
+                    Documents
+                </th>
+                <th>
+                    Club Name
+                </th>
+                <th>
+                    Sports Name
+                </th>
+                <th colspan="2">
+                    <center>
+                        Action
+                    </center>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/Validation/Validation.js"></script>
+<script src="~/Validation/DropDownValidation.js"></script>
+
+<script>
+    $(window).on("load", function () {
+        View();
+    });
+    function Edit(Registration_Id) {
+            location.href = "/Home/Index?id=" + Registration_Id;
+    }
+    function View() {
+        $("#View tbody tr").remove();
+
+        $.getJSON("/Home/ViewAll", function (data) {
+            data = JSON.parse(data);
+            $.each(data, function (i, SR) {
+                $("#View tbody").append(
+                    `<tr><td>` + SR.registration_id + `</td><td>` + SR.applicant_name + `</td><td>` + SR.email_id + `</td><td>` + SR.mobile_no + `</td><td>` + SR.dob + `</td><td>` + SR.image_path + `</td><td>` + SR.club_name + `</td><td>` + SR.sports_name + `</td><td><button class="btn btn-warning" onclick="Edit(` + SR.registration_id + `)">Edit</button></td></tr>>`
+                );
+            });
+        });
+    }
+
+</script>

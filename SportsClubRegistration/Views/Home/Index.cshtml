@@ -1,0 +1,385 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>*@
+            </div>
+            <div class="modal-body">
+                <h4 id="Msg"></h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal End-->
+
+<div class="row">
+    <div class="row p-3" style="width:100%">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6">
+                </div>
+                <div class="col-sm-6 text-right">
+                    @*<a class="btn btn-outline-primary" href="/Home/Index">Add</a>*@
+                    <a class="btn btn-outline-primary" href="/Home/ViewPage">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <fieldset class="border border-top">
+        <legend class="bg-warning pl-3 p-1">
+            Sports Club Registration Form
+        </legend>
+        <div class="row p-3" id="ApplicationDetails">
+            <br />
+
+            <div class="form-group col-md-4">
+                Select Provider
+                <select asp="club_id" id="club_id" class="form-control">
+                    <option>Select One</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                Select Subscription
+                <select asp="sports_id" id="sports_id" class="form-control">
+                    <option>Select One</option>
+                </select>
+            </div>
+            <br />
+
+            <div class="row p-3">
+
+                <input type="text" id="registration_id" class="form-control" hidden name="registration_id"><br />
+                <div class="form-group col-md-4">
+                    <label for="applicant_name">Name:</label><br />
+                    <input type="text" id="applicant_name" class="form-control" name="applicant_name"><br />
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="email_id">Email:</label><br />
+                    <input type="text" id="email_id" class="form-control" name="email_id"><br />
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="mobile_no">Mobile:</label><br />
+                    <input type="text" id="mobile_no" class="form-control" name="mobile_no"><br />
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="dob">Date of Birth:</label><br />
+                    <input type="date" id="dob" class="form-control" name="dob"><br />
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="gender">Gender:</label><br />
+                    <input type="radio" id="gender" name="gender" value="Male">
+                    <label>Male</label>
+                    <input type="radio" id="gender" name="gender" value="Female">
+                    <label>Female</label>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="image_path">Upload Address Proof:</label><br />
+                    <input type="file" id="image_path" class="form-control" name="fileUP">
+                </div>
+                <div class="form-group col-md-12">
+                    <center>
+                        <input type="button" id="saveupdate" value="Submit" class="btn btn-outline-success" />
+                        <input type="button" id="Reset" value="Reset" class="btn btn-outline-warning" />
+                    </center>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <!--<div class="row p-3" id="ApplicationDetails">
+        <br />-->
+        @*<div class="form-group col-md-12">
+            <center>
+                <h2><u>Sports Club Registration Form</u></h2>
+            </center>
+        </div>*@
+
+        <!--<div class="form-group col-md-4">
+            Select Provider
+            <select asp="club_id" id="club_id" class="form-control">
+                <option>Select One</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            Select Subscription
+            <select asp="sports_id" id="sports_id" class="form-control">
+                <option>Select One</option>
+            </select>
+        </div>
+        <br />
+
+        <div class="row p-3">
+
+            <input type="text" id="registration_id" class="form-control" hidden name="registration_id"><br />
+            <div class="form-group col-md-4">
+                <label for="applicant_name">Name:</label><br />
+                <input type="text" id="applicant_name" class="form-control" name="applicant_name"><br />
+            </div>
+            <div class="form-group col-md-4">
+                <label for="email_id">Email:</label><br />
+                <input type="text" id="email_id" class="form-control" name="email_id"><br />
+            </div>
+            <div class="form-group col-md-4">
+                <label for="mobile_no">Mobile:</label><br />
+                <input type="text" id="mobile_no" class="form-control" name="mobile_no"><br />
+            </div>
+            <div class="form-group col-md-4">
+                <label for="dob">Date of Birth:</label><br />
+                <input type="date" id="dob" class="form-control" name="dob"><br />
+            </div>
+            <div class="form-group col-md-4">
+                <label for="gender">Gender:</label><br />
+                <input type="radio" id="gender" name="gender" value="Male">
+                <label>Male</label>
+                <input type="radio" id="gender" name="gender" value="Female">
+                <label>Female</label>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="image_path">Upload Address Proof:</label><br />
+                <input type="file" id="image_path" class="form-control" name="fileUP">
+            </div>
+            <div class="form-group col-md-12">
+                <center>
+                    <input type="button" id="saveupdate" value="Submit" class="btn btn-success" />
+                    <input type="button" id="Reset" value="Reset" class="btn btn-success" />
+                </center>
+            </div>
+        </div>
+    </div>-->
+</div>
+
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/Validation/Validation.js"></script>
+<script src="~/Validation/DropDownValidation.js"></script>
+
+<script>
+    $(document).ready(function () {
+        //Validation();
+        var id = getUrlVars()["id"];
+        if (id != undefined) {
+            //$("#saveupdate").html("Update");
+            Edit(id);
+        }
+    });
+    $(window).on("load", function () {
+        GetAllClub();
+        //Validation();
+    });
+
+    function GetAllClub() {
+        $.getJSON("/Home/Getclub", function (data) {
+            data = JSON.parse(data);
+            var P = "<option>Select One</option>";
+            $.each(data, function (i, P1) {
+                P += "<option value=" + P1.club_id + ">" + P1.club_name + "</option>";
+            });
+            $("#club_id").html(P);
+        });
+    }
+
+    $(document).ready(function () {
+        $("#club_id").change(function () {
+            var club_id = $(this).val();
+            $("#sports_id").empty();
+            $.getJSON("/Home/Getsports", { club_id: club_id }, function (data) {
+                data = JSON.parse(data);
+                var S = "<option>Select One</option>";
+                $.each(data, function (i, S1) {
+                    S += "<option value=" + S1.sports_id + ">" + S1.sports_name + "</option>";
+                });
+                $("#sports_id").html(S);
+            });
+        });
+
+
+    })
+
+
+    $("#saveupdate").click(function () {
+        var files = $("#image_path").prop("files");
+        var url = "Home/UploadImage";
+        FormData = new FormData();
+        FormData.append("MyUploader", files[0]);
+
+        jQuery.ajax({
+            type: 'POST',
+            url: url,
+            data: FormData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            },
+            success: function (repo) {
+                if (repo.status == "success") {
+
+                }
+            },
+            error: function () {
+                //alert("Error occurs");
+            }
+        });
+
+        function Validation() {
+            if ($('#applicant_name').val() == "") {
+                alert("Please Enter Applicant Name")
+                $('#applicant_name').focus();
+                return false;
+            }
+            else if ($('#applicant_name').val().length < 3) {
+                alert("Applicant Name Should be greater than 3 Character")
+                $('#applicant_name').focus();
+                return false;
+            }
+            else if ($('#club_id').val() == 0) {
+                alert("Please Select Club")
+                $('#club_id').focus();
+                return false;
+            }
+            else if ($('#sports_id').val() == 0) {
+                alert("Please Select Sport")
+                $('#sports_id').focus();
+                return false;
+            }
+            else if ($('#email_id').val() == "") {
+                alert("Please Enter Email ID")
+                $('#email_id').focus();
+                return false;
+            }
+            else if ($('#mobile_no').val() == "") {
+                alert("Please Enter Mobile Number")
+                $('#mobile_no').focus();
+                return false;
+            }
+            else if ($('#dob').val() == "") {
+                alert("Please Enter Date Of Birth")
+                $('#dob').focus();
+                return false;
+            }
+            else if ($('#image_path').src == "") {
+                if ($('#image_path').val() == "") {
+                    alert("Applicant Image Should Not Blank");
+                    $('#image_path').focus();
+                    return false;
+                }
+            }
+            else {
+                return true;
+            }
+        }
+
+        if (dropDownValidation('club_id') == true && dropDownValidation('sports_id') == true && txtChkValidation('applicant_name') == true && txtChkValidation('mobile_no') == true && txtChkValidation('email_id') == true) {
+            Validation();
+
+            var SR = {
+                registration_id: $("#registration_id").val(),
+                applicant_name: $("#applicant_name").val(),
+                email_id: $("#email_id").val(),
+                mobile_no: $("#mobile_no").val(),
+                gender: $("#gender:checked").val(),
+                dob: $("#dob").val(),
+                image_path: $("#image_path").val(),
+                club_id: $("#club_id").val(),
+                sports_id: $("#sports_id").val(),
+            };
+
+
+            $.post("/Home/CreateOrUpdate", SR, function () {
+                Email();
+                if (SR.registration_id == 0) {
+                    //location.reload();
+                    $("#Msg").text("Data Inserted");
+                    $("#myModal").modal("show");
+                }
+                else {
+                    //location.reload();
+                    $("#Msg").text("Data Updated");
+                    $("#myModal").modal("show");
+                }
+                View();
+            });
+        }
+        else {
+            alert("Please Check your Data.");
+            dropDownValidation('club_id');
+            dropDownValidation('sports_id');
+            txtChkValidation('applicant_name');
+            txtChkValidation('email_id');
+            txtChkValidation('mobile_no');
+            txtChkValidation('dob');
+            txtChkValidation('image_path');
+        }
+    });
+
+    function Edit(registration_id) {
+        $('input:radio').attr('checked', false);
+
+        $.getJSON("/Home/Edit", { registration_id: registration_id }, function (data) {
+            prod = JSON.parse(data);
+            $("#registration_id").val(prod.registration_id);
+            $("#club_id").val(prod.club_id);
+            $("#sports_id").empty();
+            $.getJSON("/Home/GetSports", { club_id: prod.club_id }, function (data) {
+                data = JSON.parse(data);
+                $.each(data, function (i, sports_id) {
+                    $("#sports_id").append(
+                        `<option value=` + sports_id.sports_id + `>` + sports_id.sports_name + `</option>`
+                    );
+                    $("#sports_id").val(prod.sports_id);
+                });
+            });
+            $("#applicant_name").val(prod.applicant_name);
+            $("#email_id").val(prod.email_id);
+            $("#mobile_no").val(prod.mobile_no);
+            $("#dob").val(prod.dob);
+
+            $('input:radio').each(function () {
+                if ($(this).val() == prod.gender) {
+                    $(this).attr('checked', true);
+                }
+            });
+            $('#image_path').attr('fileUP', prod.image_path);
+        });
+    }
+
+    function Email() {
+        $.ajax({
+            type: "post",
+            url: "http://localhost:14655/api/Email/Send",
+            data: {
+                ToEmail: $("#email_id").val()
+                , Subject: "Success"
+                , Body: "You have successfully registered. Your Name is:" + $("#applicant_name").val() + " & Your Email:" + $("#email_id").val()
+                , Attachments: ""
+            },
+            datatype: "json",
+            traditional: true,
+            success: function (data) {
+                if (data == 1) {
+                    alert('Data Saved successfully..');
+                }
+                else {
+                    alert("Error");
+                }
+            }
+
+        });
+        return false;
+    }
+
+</script>
